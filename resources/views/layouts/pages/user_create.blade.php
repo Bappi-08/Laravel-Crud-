@@ -13,7 +13,7 @@
 
             
 
-                <form action="{{ url('user/store') }}" method="post">
+                <form action="{{ url('user/store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="" class="form-label">Photo</label>

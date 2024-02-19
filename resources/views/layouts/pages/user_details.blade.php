@@ -40,6 +40,15 @@
                         <td>{{ $user->updated_at }}</td>
 
                     </tr>
+                    <tr>
+                   
+                        <img src="{{ asset('storage/'.$user->image) }}" alt=""  width="200">
+                        
+                        
+
+                    </tr>
+              
+              
                 </table>
 
                 </div>
@@ -48,6 +57,5 @@
             </div>
             </div>
 
-
-
+           
 @endsection

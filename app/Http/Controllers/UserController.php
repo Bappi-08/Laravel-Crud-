@@ -48,15 +48,19 @@ class UserController extends Controller
     
        
     
-       // $filepath = $request->image->storeAs('uploads',  $request->image->getClientOriginalName());
     
     
         $user = new User();
+       $fileName= time().'_'.$request->image->getClientOriginalName();
+       $filepath=$request->image->storeAs('uploads',$fileName);
+     // $imagePath=$request->file('image');
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone_number = $request->phone_number;
         $user->password = bcrypt($request->password);
-      //  $user->image = $filepath;  // Corrected line
+       // $user->image = $request->image;
+       $user->image = $filepath;
+     //  $user->image = $imagePath;  // Corrected line
         $user->save();
     
         return redirect()->to('/users')->with('a', 'User created successfully');
